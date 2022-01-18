@@ -39,7 +39,9 @@
         style="font-weight: 500; color: white"
         [routerLink]="[menuItem.path]"
       >
-        <i class="material-icons" style="color: white">{{ menuItem.icon }}</i>
+        <i class="material-icons activeicon" style="color: white">{{
+          menuItem.icon
+        }}</i>
         <p>{{ menuItem.title }}</p>
       </a>
     </li>
