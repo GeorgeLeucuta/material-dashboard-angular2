@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
-
+import { MatIconModule } from "@angular/material/icon";
 import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
 
@@ -17,6 +17,7 @@ import { IconsComponent } from "./icons/icons.component";
 import { MapsComponent } from "./maps/maps.component";
 import { NotificationsComponent } from "./notifications/notifications.component";
 import { UpgradeComponent } from "./upgrade/upgrade.component";
+
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatFormFieldModule } from "@angular/material/form-field";
 
@@ -28,6 +29,7 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
     HttpClientModule,
     ComponentsModule,
     RouterModule,

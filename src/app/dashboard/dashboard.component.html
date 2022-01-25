@@ -1,108 +1,1707 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-success">
-            <div class="ct-chart" id="dailySalesChart"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Daily Sales</h4>
-            <p class="card-category">
-              <span class="text-success"
-                ><i class="fa fa-long-arrow-up"></i> 55%
-              </span>
-              increase in today sales.
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <i class="material-icons">access_time</i> updated 4 minutes ago
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-warning">
-            <div class="ct-chart" id="websiteViewsChart"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Email Subscriptions</h4>
-            <p class="card-category">Last Campaign Performance</p>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <i class="material-icons">access_time</i> campaign sent 2 days ago
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-danger">
-            <div class="ct-chart" id="completedTasksChart"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">Completed Tasks</h4>
-            <p class="card-category">Last Campaign Performance</p>
-          </div>
-          <div class="card-footer">
-            <div class="stats">
-              <i class="material-icons">access_time</i> campaign sent 2 days ago
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
       <div class="col-md-12">
         <div class="card card-chart">
           <div class="card-header card-header-success">
-            <a style="font-size: 24px; font-weight: 400">Business plan</a>
+            <a style="font-size: 24px; font-weight: 400">Business plan - EPG</a>
           </div>
           <div class="card-body">
             <!-- <h4 class="card-title">Daily Sales</h4> -->
-            <p class="card-category">Total by OA type.</p>
-
-            <!-- Here -->
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-              "
-            >
-              <label>Sales</label>
-
-              <mat-form-field appearance="outline">
-                <mat-label>OP</mat-label>
-                <input matInput placeholder="Placeholder" />
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Sales</mat-label>
-                <input matInput placeholder="Placeholder" />
-              </mat-form-field>
+            <div style="display: flex; justify-content: space-between">
+              <p class="card-category">Business report categories.</p>
+              <button
+                mat-raised-button
+                style="background-color: #4caf50; color: #ffffff"
+              >
+                Info
+              </button>
             </div>
+            <br />
             <div
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-              "
+              style="display: flex; align-items: center; justify-content: left"
             >
-              <label>Sales</label>
+              <!-- <mat-icon> keyboard_arrow_left </mat-icon> -->
 
-              <mat-form-field appearance="outline">
-                <mat-label>OP</mat-label>
-                <input matInput placeholder="Placeholder" />
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Sales</mat-label>
-                <input matInput placeholder="Placeholder" />
-              </mat-form-field>
+              <!-- <h3 style="font-size: 40px; font-weight: 500; color: darkgray">
+                Business Unit
+              </h3> -->
+
+              <!-- <mat-icon> keyboard_arrow_right </mat-icon> -->
             </div>
+            <mat-accordion class="example-headers-align">
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 0"
+                (opened)="setStep(0)"
+                hideToggle
+              >
+                <mat-expansion-panel-header
+                  class="expansion-header-nidec"
+                  class="expansion-header-nidec"
+                >
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Total by OA Type
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div id="content" style="display: flex; flex-wrap: wrap">
+                  <div id="content-left" style="flex: 0 0 50%; max-width: 50%">
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: left;
+                          margin-top: 50px;
+                        "
+                      >
+                        <label
+                          style="
+                            font-size: 20px;
+                            color: #888;
+                            font-weight: 300;
+                            width: 150px;
+                          "
+                          >Sales</label
+                        >
+
+                        <mat-form-field
+                          style="margin-right: 50px"
+                          appearance="outline"
+                        >
+                          <mat-label>Sales</mat-label>
+
+                          <input matInput placeholder="Sales" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>OP</mat-label>
+                          <input matInput placeholder="OP" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: left;
+                        "
+                      >
+                        <label
+                          style="
+                            font-size: 20px;
+                            color: #888;
+                            font-weight: 300;
+                            width: 150px;
+                          "
+                          >Procurement</label
+                        >
+
+                        <mat-form-field
+                          style="margin-right: 50px"
+                          appearance="outline"
+                        >
+                          <mat-label>Sales</mat-label>
+                          <input matInput placeholder="Sales" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>OP</mat-label>
+                          <input matInput placeholder="OP" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: left;
+                        "
+                      >
+                        <label
+                          style="
+                            font-size: 20px;
+                            color: #888;
+                            font-weight: 300;
+                            width: 150px;
+                          "
+                          >VA/VE</label
+                        >
+
+                        <mat-form-field
+                          style="margin-right: 50px"
+                          appearance="outline"
+                        >
+                          <mat-label>Sales</mat-label>
+                          <input matInput placeholder="Sales" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>OP</mat-label>
+                          <input matInput placeholder="OP" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: left;
+                        "
+                      >
+                        <label
+                          style="
+                            font-size: 20px;
+                            color: #888;
+                            font-weight: 300;
+                            width: 150px;
+                          "
+                          >Operation</label
+                        >
+
+                        <mat-form-field
+                          style="margin-right: 50px"
+                          appearance="outline"
+                        >
+                          <mat-label>Sales</mat-label>
+                          <input matInput placeholder="Sales" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>OP</mat-label>
+                          <input matInput placeholder="OP" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: left;
+                        "
+                      >
+                        <label
+                          style="
+                            font-size: 20px;
+                            color: #888;
+                            font-weight: 300;
+                            width: 150px;
+                          "
+                          >Other</label
+                        >
+
+                        <mat-form-field
+                          style="margin-right: 50px"
+                          appearance="outline"
+                        >
+                          <mat-label>Sales</mat-label>
+                          <input matInput placeholder="Sales" />
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>OP</mat-label>
+                          <input matInput placeholder="OP" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                      <button
+                        mat-raised-button
+                        style="
+                          background-color: #4caf50;
+                          color: #ffffff;
+                          width: 100px;
+                          height: 40px;
+                        "
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                  <div id="content-right" style="flex: 0 0 50%; max-width: 50%">
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 50px;
+                        min-height: 70px;
+                        border: 1px solid #888;
+                        border-bottom: none;
+                        background-color: #f8fafc;
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                      "
+                    >
+                      <button
+                        mat-raised-button
+                        style="background-color: #4caf50; color: #ffffff"
+                      >
+                        FY22
+                      </button>
+                    </div>
+                    <div id="calendar-content" style="border: 1px solid #888">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-around;
+                          padding: 12px;
+                        "
+                      >
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #4caf50;
+                            color: #ffffff;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          April
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          May
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          June
+                        </button>
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-around;
+                          padding: 12px;
+                        "
+                      >
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          July
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          August
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          September
+                        </button>
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-around;
+                          padding: 12px;
+                        "
+                      >
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          October
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          November
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          December
+                        </button>
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-around;
+                          padding: 12px;
+                        "
+                      >
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          January
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          February
+                        </button>
+                        <button
+                          mat-raised-button
+                          style="
+                            background-color: #f8fafc;
+                            color: black;
+                            width: 180px;
+                            height: 40px;
+                          "
+                        >
+                          March
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 1"
+                (opened)="setStep(1)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    In Plan
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 2"
+                (opened)="setStep(2)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Rank A
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 3"
+                (opened)="setStep(3)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Rank B
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 4"
+                (opened)="setStep(4)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Rank C
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 5"
+                (opened)="setStep(5)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Rank D
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 6"
+                (opened)="setStep(6)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Rank E
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    Next
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              <mat-expansion-panel
+                class="expansion-nidec"
+                [expanded]="step === 7"
+                (opened)="setStep(7)"
+                hideToggle
+              >
+                <mat-expansion-panel-header class="expansion-header-nidec">
+                  <mat-panel-title
+                    style="font-size: 20px; font-weight: 600; color: #4caf50"
+                  >
+                    Moved/Cancelled
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                      margin-top: 50px;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Sales</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Procurement</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >VA/VE</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Operation</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: left;
+                    "
+                  >
+                    <label
+                      style="
+                        font-size: 20px;
+                        color: #888;
+                        font-weight: 300;
+                        width: 150px;
+                      "
+                      >Other</label
+                    >
+
+                    <mat-form-field
+                      style="margin-right: 50px"
+                      appearance="outline"
+                    >
+                      <mat-label>Sales</mat-label>
+                      <input matInput placeholder="Sales" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                      <mat-label>OP</mat-label>
+                      <input matInput placeholder="OP" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="prevStep()">
+                    Previous
+                  </button>
+                  <button
+                    mat-raised-button
+                    style="background-color: #4caf50; color: #ffffff"
+                    (click)="nextStep()"
+                  >
+                    End
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
         </div>
       </div>

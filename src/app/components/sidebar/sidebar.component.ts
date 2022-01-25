@@ -22,6 +22,12 @@ export const ROUTES: RouteInfo[] = [
     class: "",
   },
   { path: "/icons", title: "Monthly update", icon: "bubble_chart", class: "" },
+  {
+    path: "/table-list",
+    title: "Actual Achieved",
+    icon: "account_balance",
+    class: "",
+  },
 ];
 
 @Component({

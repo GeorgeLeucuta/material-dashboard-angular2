@@ -11,3 +11,22 @@
 .example-headers-align .mat-form-field + .mat-form-field {
   margin-left: 8px;
 }
+.mat-input-element {
+  caret-color: #4caf50;
+}
+.mat-expansion-panel-header {
+  height: 70px;
+}
+.expansion-nidec {
+  border-left: 0.25rem solid #4caf50;
+}
+.expansion-header-nidec {
+  background-color: #f8fafc;
+}
+mat-expansion-panel-header:hover {
+  background-color: transparent !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: #f8fafc;
+  border-radius: 5px;
+}
